@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ci8yrujyvfo04"]
+
+[ext_resource type="Script" uid="uid://bf2hgi37j7jhr" path="res://3d Learning/Scripts/player.gd" id="1_qvso4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7u77a"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_jjgbg"]
+sky_material = SubResource("ProceduralSkyMaterial_7u77a")
+
+[sub_resource type="Environment" id="Environment_bo1nx"]
+background_mode = 2
+sky = SubResource("Sky_jjgbg")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7u77a"]
+albedo_color = Color(0.28260988, 0.5835659, 0.31123877, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jjgbg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo1nx"]
+albedo_color = Color(0.6315906, 0.23344284, 0.35349432, 1)
+
+[node name="Node3D" type="Node3D" unique_id=1515567800]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=111899467]
+environment = SubResource("Environment_bo1nx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=171715767]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2112549567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(10, 1, 10)
+material = SubResource("StandardMaterial3D_7u77a")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=13973616]
+script = ExtResource("1_qvso4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=442990537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_jjgbg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D" unique_id=441517941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0846459, 0)
+size = Vector3(1, 2, 1)
+material = SubResource("StandardMaterial3D_bo1nx")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=306071610]
+transform = Transform3D(1, 0, 0, 0, 0.9396927, 0.34202015, 0, -0.34202015, 0.9396927, 0, 2.6000001, 3.6)
