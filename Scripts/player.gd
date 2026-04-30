@@ -1,9 +1,12 @@
 extends CharacterBody3D
+@onready var animation_player: AnimationPlayer = $Mesh/AnimationPlayer
 
 
 @export var speed := 5.0
 const JUMP_VELOCITY = 4.5
 @onready var camera: Node3D = $SpringArm3D/Camera3D
+const RUN_SPEED := 3.5
+const BLEND_SPEED := 0.2
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -28,6 +31,14 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	turn_to(direction)
+	
+	var current_speed := velocity.length()
+	if current_speed > RUN_SPEED:
+		animation_player.play("freehand_run", BLEND_SPEED)
+	elif current_speed > 0:
+		animation_player.play("freehand_walk", BLEND_SPEED, lerp(0.5, 1.25, current_speed / RUN_SPEED))
+	else:
+		animation_player.play("freehand_idle")
 
 func turn_to(direction: Vector3) -> void:
 	if direction:
