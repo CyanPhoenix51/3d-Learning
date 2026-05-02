@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://phnkpt1o75hy"
+path="res://.godot/imported/stone_step_2.wav-75214b6b9ea372965f543862da7ce438.sample"
+
+[deps]
+
+source_file="res://3d Learning/Audio/Footsteps/stone_step_2.wav"
+dest_files=["res://.godot/imported/stone_step_2.wav-75214b6b9ea372965f543862da7ce438.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

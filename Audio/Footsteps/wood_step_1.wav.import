@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dkb78hqxe4p5x"
+path="res://.godot/imported/wood_step_1.wav-43fa0fd021dc2d907c091fb3803f6e3c.sample"
+
+[deps]
+
+source_file="res://3d Learning/Audio/Footsteps/wood_step_1.wav"
+dest_files=["res://.godot/imported/wood_step_1.wav-43fa0fd021dc2d907c091fb3803f6e3c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

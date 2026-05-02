@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0qw680ixifum"
+path="res://.godot/imported/dirt_step_3.wav-fafc321f00dbe1e40ea30dde4601c049.sample"
+
+[deps]
+
+source_file="res://3d Learning/Audio/Footsteps/dirt_step_3.wav"
+dest_files=["res://.godot/imported/dirt_step_3.wav-fafc321f00dbe1e40ea30dde4601c049.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -2,6 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://dsediogqs2yr5" path="res://3d Learning/Scenes/player.tscn" id="1_q2g6k"]
 [ext_resource type="PackedScene" uid="uid://cs7knyvwj84kk" path="res://3d Learning/Meshes/test_level.glb" id="2_q2g6k"]
+[ext_resource type="AudioStream" uid="uid://bm7ost2vi1doq" path="res://3d Learning/Audio/Music/temple.mp3" id="3_6eyd2"]
+[ext_resource type="Script" uid="uid://ckglq7p0nt0s2" path="res://3d Learning/Scripts/worldsound.gd" id="3_m8pbl"]
+[ext_resource type="AudioStream" uid="uid://xb4rr7rwmc1r" path="res://3d Learning/Audio/Footsteps/stone_step_sounds.tres" id="4_wf0mp"]
+[ext_resource type="AudioStream" uid="uid://m2gap7d1ms43" path="res://3d Learning/Audio/Footsteps/wood_step_sounds.tres" id="5_q1e8u"]
+[ext_resource type="AudioStream" uid="uid://dwooedmsp0wi1" path="res://3d Learning/Audio/Footsteps/snow_step_sounds.tres" id="6_bq12q"]
+[ext_resource type="AudioStream" uid="uid://dpihtka76niif" path="res://3d Learning/Audio/Footsteps/dirt_step_sounds.tres" id="7_agx7x"]
+[ext_resource type="AudioStream" uid="uid://croc06k8jh75v" path="res://3d Learning/Audio/Footsteps/grass_step_sounds.tres" id="8_5b2t6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7u77a"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -28,3 +35,30 @@ shadow_enabled = true
 [node name="Player" parent="." unique_id=156141114 instance=ExtResource("1_q2g6k")]
 
 [node name="test_level" parent="." unique_id=854022399 instance=ExtResource("2_q2g6k")]
+
+[node name="StaticBody3D" parent="test_level/level" parent_id_path=PackedInt32Array(854022399, 1812738699) index="0" unique_id=1090157375]
+script = ExtResource("3_m8pbl")
+footstep_sounds = ExtResource("4_wf0mp")
+
+[node name="StaticBody3D" parent="test_level/wood" parent_id_path=PackedInt32Array(854022399, 529229592) index="0" unique_id=7170113]
+script = ExtResource("3_m8pbl")
+footstep_sounds = ExtResource("5_q1e8u")
+
+[node name="StaticBody3D" parent="test_level/snow" parent_id_path=PackedInt32Array(854022399, 1719806194) index="0" unique_id=316559534]
+script = ExtResource("3_m8pbl")
+footstep_sounds = ExtResource("6_bq12q")
+
+[node name="StaticBody3D" parent="test_level/grass" parent_id_path=PackedInt32Array(854022399, 684981663) index="0" unique_id=134680741]
+script = ExtResource("3_m8pbl")
+footstep_sounds = ExtResource("7_agx7x")
+
+[node name="StaticBody3D" parent="test_level/dirt" parent_id_path=PackedInt32Array(854022399, 1615174375) index="0" unique_id=1136712747]
+script = ExtResource("3_m8pbl")
+footstep_sounds = ExtResource("8_5b2t6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1874739216]
+stream = ExtResource("3_6eyd2")
+autoplay = true
+bus = &"Music"
+
+[editable path="test_level"]
